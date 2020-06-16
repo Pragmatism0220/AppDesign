@@ -1,31 +1,25 @@
-# AppDesign
-Application design homework for me.
+# A3-文本编辑器
+A3题。
 
-## 它是什么
-这是我在大三时的“软件设计”实习周的一份作业，一共七道题目，两个星期内完成。应该说时间还是非常宽裕的，题目本身也并不是很难。至于为什么想要开源，主要是想着，将这段时间的经历分享出来，毕竟是自己用心做的，也可以给他人作为一个参考吧。
+## 题目描述
+分数统计（10）
 
-**注意：本项目已上交作业，不得抄袭！！如需引用，需显著注明该仓库地址及作者。项目遵循[Mozilla Public License 2.0](https://github.com/Pragmatism0220/AppDesign/blob/master/LICENSE)协议开源，请认真阅读遵守。**
+要求：
+* 编辑文本；
+* 保存、打开指定位置的文本文件；
+* 具有输入输出界面。
 
-### 环境依赖
-* Python 3.7.2环境开发
-* Windows 10操作系统
-
-之所以选用Python开发，一方面是因为我对Python比较熟悉，另一方面是因为Python开发的高效。我需要在有限的时间内完成优秀的软件，那么繁茂的Python社区决定了Python一定是我的第一选择。
-
-对于其他版本的Python我并没有做测试；所有的图形化界面均采用[PyQt5](https://pypi.org/project/PyQt5/)开发。为了保证代码的一致性，代码风格均采用[PEP8](https://www.python.org/dev/peps/pep-0008/)标准（除了base64的图片编码部分）。
-
-此外，对于我所引用的其他第三方开源类库，我表示衷心的感谢。非常感谢你们伟大的工作！！非常感谢！！
 
 ## 如何使用
 ### 方法一、使用release版
-在项目的[release](https://github.com/Pragmatism0220/AppDesign/releases)界面下载最新的release版本，然后直接双击运行即可。
+在项目的[release](https://github.com/Pragmatism0220/AppDesign/releases)界面下载对应的最新的release版本，然后直接双击运行即可。
 
 ### 方法二、源码运行
 首先利用git克隆该项目到本地：
 ```shell
 git clone https://github.com/Pragmatism0220/AppDesign.git
 ```
-克隆之后，所对应的每个文件夹都是一个项目；先进入你想运行的项目，之后在确保已经安装Python3的情况下，安装相应的依赖，使用命令：
+克隆之后，所对应的每个文件夹都是一个项目；先进入该项目，之后在确保已经安装Python3的情况下，安装相应的依赖，使用命令：
 ```shell
 pip install -r requirements.txt
 ```
@@ -37,12 +31,21 @@ python app.py
 ```
 同样地，如果你的默认Python版本不是3的话，你应该使用`python3`代替`python`。
 
-具体的使用方法我在每个子项目的**自述文件**里有详细说明，请查看。
+![展示图1](./A3-screenshot-1.png)
 
+![展示图2](./A3-screenshot-2.png)
+
+![展示图3](./A3-screenshot-3.png)
 之后，尽情享受吧！
 
+功能：
+* **文件**：支持`打开`、`保存`、`另存为`、`打印`。
+* **编辑**：支持`撤销`、`重做`、`剪切`、`复制`、`粘贴`、`全选`、`自动换行`。
+* **格式**：支持`加粗`、`倾斜`、`下划线`、`左对齐`、`居中`、`右对齐`、`两端对齐`。
+* **字体**：支持电脑中安装的所有字体。`字号`可以调节。
+
 ## 一些细节
-基本上每个项目都分为两个文件：`app.py`和`UI.py`，个别的项目会有`images.py`，这表示那里面嵌入了一些图片信息。
+项目分为三个文件：`app.py`、`UI.py`和`images.py`。其中`images.py`里是图标的base64编码信息。
 
 `app.py`是主控脚本，负责调用`UI.py`，本身不涉及任何实现；`UI.py`是前端和后端的集成，由类和类方法实现。对于更详细的踩坑过程，可以访问[我的博客](https://pragmatism0220.cf/)~~（随缘更新）~~。~~由于一些特殊的原因国内访问可能会比较慢。~~
 
